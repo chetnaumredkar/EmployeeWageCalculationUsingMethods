@@ -6,47 +6,38 @@ public class EmployeeWageCalculation {
 	static int ABSENT = 0;
 	double empCheck;
 	int empHrs;
-	int empWage = 1;
+	int empWage = 0;
 	static int Emp_Rate_Per_Hour = 20;
 
-	public void attendence() {
-		empCheck = Math.floor(Math.random() * 3);
-		System.out.println(empCheck);
-		if (empCheck == IS_FULL_TIME) {
-			System.out.println("Employee is Present");
-		} else if (empCheck == ABSENT) {
-			System.out.println("Employee is not Present");
-		} else {
-			System.out.println("Employee Present For Half Day");
-		}
-	}
+	public void monthly_Wage_Calculation() {
+		for (int i = 0; i < 20; i++) {
+			double empCheck = Math.floor(Math.random() * 3);
+			switch ((int) empCheck) {
+			case 0: {
+				empHrs = 0;
+				break;
+			}
+			case 1: {
+				empHrs = 16;
+				break;
+			}
+			case 2: {
+				empHrs = 8;
+				break;
+			}
+			}
 
-	public void switch_Daily_Employee_Wage() {
-		switch ((int) empCheck) {
-		case 0: {
-			empHrs = 0;
-			break;
-		}
-		case 1: {
-			empHrs = 16;
-			break;
-		}
-		case 2: {
-			empHrs = 8;
-			break;
-		}
+			empWage += (empHrs * Emp_Rate_Per_Hour);
 
 		}
-		empWage = empHrs * Emp_Rate_Per_Hour;
-		System.out.println("emp wage: " + empWage);
+		System.out.println("Total monthly emp wage is : " + empWage);
 
 	}
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Employee\r\n" + "Wage Computation\r\n" + "Program on Master Branch");
 		EmployeeWageCalculation obj = new EmployeeWageCalculation();
-		obj.attendence();
-		obj.switch_Daily_Employee_Wage();
+		obj.monthly_Wage_Calculation();
 	}
 
 }
