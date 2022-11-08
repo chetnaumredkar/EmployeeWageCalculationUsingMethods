@@ -2,8 +2,8 @@ package com.bridgelabz;
 
 public class EmployeeWageCalculation {
 	static int IS_FULL_TIME = 1;
-	static int PART_TIME =2 ;
-	static int ABSENT=0;
+	static int PART_TIME = 2;
+	static int ABSENT = 0;
 	double empCheck;
 	int empHrs;
 	int empWage = 1;
@@ -14,22 +14,28 @@ public class EmployeeWageCalculation {
 		System.out.println(empCheck);
 		if (empCheck == IS_FULL_TIME) {
 			System.out.println("Employee is Present");
-		} else if(empCheck == ABSENT) {
+		} else if (empCheck == ABSENT) {
 			System.out.println("Employee is not Present");
-		}
-			else {
-				System.out.println("Employee Present For Half Day");
+		} else {
+			System.out.println("Employee Present For Half Day");
 		}
 	}
 
-	public void daily_Employee_Wage() {
-		if (empCheck == PART_TIME) {
-			empHrs = 8;
-		} else if(empCheck == IS_FULL_TIME){
-			empHrs =16;
+	public void switch_Daily_Employee_Wage() {
+		switch ((int) empCheck) {
+		case 0: {
+			empHrs = 0;
+			break;
 		}
-		else {
-			empHrs=0;
+		case 1: {
+			empHrs = 16;
+			break;
+		}
+		case 2: {
+			empHrs = 8;
+			break;
+		}
+
 		}
 		empWage = empHrs * Emp_Rate_Per_Hour;
 		System.out.println("emp wage: " + empWage);
@@ -40,7 +46,7 @@ public class EmployeeWageCalculation {
 		System.out.println("Welcome to Employee\r\n" + "Wage Computation\r\n" + "Program on Master Branch");
 		EmployeeWageCalculation obj = new EmployeeWageCalculation();
 		obj.attendence();
-		obj.daily_Employee_Wage();
+		obj.switch_Daily_Employee_Wage();
 	}
 
 }
