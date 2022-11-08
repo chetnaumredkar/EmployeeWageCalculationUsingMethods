@@ -16,6 +16,16 @@ public class EmployeeWageCalculation {
 		} else {
 			System.out.println("Employee is not Present");
 		}
+	}
+
+	public void daily_Employee_Wage() {
+		if (empCheck == IS_FULL_TIME) {
+			empHrs = 8;
+		} else {
+			empHrs = 0;
+		}
+		empWage = empHrs * Emp_Rate_Per_Hour;
+		System.out.println("emp wage: " + empWage);
 
 	}
 
@@ -23,6 +33,7 @@ public class EmployeeWageCalculation {
 		System.out.println("Welcome to Employee\r\n" + "Wage Computation\r\n" + "Program on Master Branch");
 		EmployeeWageCalculation obj = new EmployeeWageCalculation();
 		obj.attendence();
+		obj.daily_Employee_Wage();
 	}
 
 }
