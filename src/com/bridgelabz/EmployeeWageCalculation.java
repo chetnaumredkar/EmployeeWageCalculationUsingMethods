@@ -3,7 +3,7 @@ package com.bridgelabz;
 import java.lang.Math;
 
 import java.util.Scanner;
-
+//declaring instance variable for employee wage calculation
 public class EmployeeWageCalculation {
 	static double IS_FULL_TIME = 1;
 	static double PART_TIME = 2;
@@ -19,6 +19,7 @@ public class EmployeeWageCalculation {
 		this.Emp_Rate_Per_Hour=Emp_Rate_Per_Hour;
 		this.working_Hours_Per_Month=working_Hours_Per_Month;
 	}
+	//method to calculate Calculate Wages till a condition of total working hours or days is reached for a month
 	public void monthly_Conditional_Wage_Calculation() {
 		while (a < No_Of_Working_Days )  {
 
@@ -50,7 +51,7 @@ public class EmployeeWageCalculation {
 		System.out.println("The total income of an employee in a month is " + empWage);
 
 	}
-
+	//calling main method to create an object  and calling method using object
 	public static void main(String[] args) {
 		System.out.println("Welcome to Employee\r\n" + "Wage Computation\r\n" + "Program on Master Branch");
 		EmployeeWageCalculation company1 = new EmployeeWageCalculation(20, 30, 120);
